@@ -1,0 +1,14 @@
+block variables
+
+doctype html
+html(lang="ja")
+  block head
+    head
+      if pageTitle
+        title #{pageTitle} | スキー行きたい
+      else
+        title スキー行きたい
+  body
+    block content
+    include _footer
+
