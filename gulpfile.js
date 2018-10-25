@@ -11,7 +11,7 @@ gulp.task('sass', function () {
       errorHandler: notify.onError('<%= error.message %>')
     }))
     .pipe(sass())
-    .pipe(gulp.dest('./dest/assets/css'))
+    .pipe(gulp.dest('./docs/assets/css'))
     .pipe(browserSync.reload({
       stream: true
     }));
@@ -25,7 +25,7 @@ gulp.task('pug', function () {
       errorHandler: notify.onError('<%= error.message %>')
     }))
     .pipe(pug({pretty: true}))
-    .pipe(gulp.dest('./dest'))
+    .pipe(gulp.dest('./docs'))
     .pipe(browserSync.reload({
       stream: true
     }));
@@ -39,7 +39,7 @@ gulp.task('watch', function () {
 gulp.task('browser-sync', function () {
   browserSync.init({
     server: {
-      baseDir: './dest'
+      baseDir: './docs'
     }
   });
 });
